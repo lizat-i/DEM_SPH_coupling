@@ -10,6 +10,7 @@ RUN apt-get --yes -qq update \
  && apt-get --yes -qq upgrade \
  && apt-get --yes -qq install \
     git \
+    vim \
     openmpi-bin \
     libopenmpi-dev \
     libvtk6.3 \
