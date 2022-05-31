@@ -9,12 +9,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get --yes -qq update \
  && apt-get --yes -qq upgrade \
  && apt-get --yes -qq install \
-    git \
     vim \
-    openmpi-bin \
+    git \
+    openmpi-bin \    
     libopenmpi-dev \
     libvtk6.3 \
-    libvtk6-dev 
+    libvtk6-dev
  #  create new user called from :
 RUN useradd --user-group --create-home --shell /bin/bash DEM_user ;\
     echo "DEM_user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
@@ -25,5 +25,5 @@ RUN git clone https://github.com/lizat-i/LIGGGHTS-PUBLIC.git    ; \
     make auto                                                    
 
 #   link exexutable and make it accesible for the whole environment                     
-RUN ln -s /LIGGGHTS-PUBLIC/src/lmp_auto /home/DEM_user/liggghts  ;\
-    export PATH="/home/DEM_user:$PATH"
+RUN echo "export PATH=/home/DEM_user/" >> ~/.bashrc   
+RUN echo "ln -s /LIGGGHTS-PUBLIC/src/lmp_auto /home/DEM_user/liggghts"  ;\ 
