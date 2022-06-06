@@ -1,5 +1,5 @@
 #Start from the official Ubuntu Bionic(18.04 LTS) image
-FROM ubuntu:bionic
+FROM ubuntu:latest
 
 # During building the image Frontend is non-interactive, set TZ to avoid interactiv input request
 ENV TZ=Europe/Bruessels
@@ -25,5 +25,13 @@ RUN git clone https://github.com/lizat-i/LIGGGHTS-PUBLIC.git    ; \
     make auto                                                    
 
 #   link exexutable and make it accesible for the whole environment                     
+<<<<<<< HEAD
 RUN echo "export PATH=/home/DEM_user/" >> ~/.bashrc   
 RUN echo "ln -s /LIGGGHTS-PUBLIC/src/lmp_auto /home/DEM_user/liggghts"  ;\ 
+=======
+RUN ln -s /LIGGGHTS-PUBLIC/src/lmp_auto /home/DEM_user/liggghts                 ;\
+    echo "export PATH=/home/DEM_user" >> ~DEM_user/.bashrc                      ;\
+    echo "export OMPI_MCA_btl_vader_single_copy_mechanism=none" >> ~DEM_user/.bashrc    
+
+USER DEM_user
+>>>>>>> b5e33fe6fe2229eb04740d651dae37ce09a32f4d
