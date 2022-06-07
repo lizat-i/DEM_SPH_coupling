@@ -1,2 +1,8 @@
 #!/bin/bash
-mpirun -np 4 liggghts < in.chute_wear
+while getopts np: flag
+do
+    case "${flag}" in
+        u) numberOfprocessors=${OPTARG};;
+    esac
+done
+mpirun -np $numberOfprocessors liggghts < in.chute_wear
