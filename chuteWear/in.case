@@ -49,7 +49,7 @@ region bc cylinder z 0.0 0.0 0.015 0.05 0.12 units box
 
 #particle insertion
 fix    ins nve_group insert/stream seed 32452867 distributiontemplate pdd1 &
-       nparticles 6000 massrate 1 insert_every 1000 overlapcheck yes all_in no vel constant 0.0 0.0 -1.0 &
+       nparticles 6000 massrate 2 insert_every 1000 overlapcheck yes all_in no vel constant 0.0 0.0 -1.0 &
        insertion_face inface 
 
 #apply nve integration to all particles that are inserted as single particles

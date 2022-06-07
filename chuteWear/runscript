@@ -1,2 +1,2 @@
 #!/bin/bash
-mpirun --allow-run-as-root -np 4 liggghts < in.case
+mpirun --allow-run-as-root -np 6 liggghts<in.case
