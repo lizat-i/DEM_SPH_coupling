@@ -1,1 +1,2 @@
-liggghts < in.chute_wear
+#!/bin/bash
+mpirun -np 4 liggghts < in.chute_wear
