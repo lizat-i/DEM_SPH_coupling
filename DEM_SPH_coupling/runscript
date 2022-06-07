@@ -1,8 +1,2 @@
 #!/bin/bash
-while getopts np: flag
-do
-    case "${flag}" in
-        u) numberOfprocessors=${OPTARG};;
-    esac
-done
-mpirun -np $numberOfprocessors liggghts < in.chute_wear
+mpirun --allow-run-as-root -np 4 liggghts < in.case
