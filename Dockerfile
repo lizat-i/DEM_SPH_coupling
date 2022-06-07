@@ -18,4 +18,3 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/lizat-i/LIGGGHTS-PUBLIC.git    ; \
     cd LIGGGHTS-PUBLIC/src/                                     ; \
     make auto                                                   ; \
-    ln -s /LIGGGHTS-PUBLIC/src/lmp_auto /bin/liggghts           
